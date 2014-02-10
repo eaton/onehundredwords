@@ -1,0 +1,9 @@
+---
+layout: default
+title: one hundred words
+---
+{% assign ep = 0 %}
+<ul class="season">{% for episode in site.categories.00 reversed %}
+  <li class="published {{ episode.layout }}"><a href="{{ episode.url }}">{{ ep | number "00" }}</a></li>{% capture ep %}{{ ep | plus:1 }}{% endcapture %}{% endfor %}
+{% for ep in (ep..99) %}  <li class="unpublished">{{ ep | number "00" }}</li>{% endfor %}
+</ul>

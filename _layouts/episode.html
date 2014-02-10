@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+
+<article>
+{{ content }}
+</article>
+
+<nav>
+{% if page.previous.url %}<a class="prev" href="{{ page.previous.url }}">{% endif %}{% include prev.svg %}{% if page.previous.url %}</a>{% endif %}
+{% if page.next.url %}<a class="prev" href="{{ page.next.url }}">{% endif %}{% include next.svg %}{% if page.next.url %}</a>{% endif %}
+</nav>

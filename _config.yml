@@ -1,0 +1,16 @@
+# standard jekyll stuff
+permalink: /:categories/:title
+markdown: kramdown
+exclude:
+  - Rakefile
+  - config.rb
+
+# configuration required for some pages
+domain: onehundredwords.com
+title: One Hundred Words
+author: Jeff Eaton
+email: bonsai@angrylittletree.com
+
+# configuration for ehancements
+google_analytics: UA-34484445-1
+typekit: pxu7qac

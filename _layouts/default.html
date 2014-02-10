@@ -1,0 +1,43 @@
+---
+# title: 
+layout: none
+---
+<!DOCTYPE html{% if page.citations %} xmlns:cito="http://purl.org/spar/cito/"{% endif %}>
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->
+<!--[if !IE]><html lang="en-US"><![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{{ site.title }}</title>
+{% include meta.html %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/css/screen.css" type="text/css" rel="stylesheet">
+
+{% if site.google_analytics %}
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>{% endif %}
+{% if site.typekit %}
+<script type="text/javascript" src="//use.typekit.net/{{ site.typekit }}.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">fitText(document.getElementById('site-title'), 1)</script>
+</head>{% endif %}
+
+<body>
+<h1 id="site-title"><a href="/">One Hundred Words</a></h1>
+
+<div id="primary">
+{{ content }}
+</div>
+
+</body>
+</html>
