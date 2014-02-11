@@ -1,4 +1,4 @@
 ---
 layout: episode
 ---
-<img src="/{{ page.season }}/f/{{ page.episode }}.jpg" />
+<img src="/{{ page.categories }}/{% if page.episode < 10 %}0{% endif %}{{ page.episode }}.jpg" />

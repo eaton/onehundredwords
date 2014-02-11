@@ -1,4 +1,4 @@
 ---
 layout: episode
 ---
-<audio controls src="/{{ page.categories }}/{{ page.episode | number "00" }}.mp3" />
+<audio controls src="/{{ page.categories }}/{% if page.episode < 10 %}0{% endif %}{{ page.episode }}.mp3" />

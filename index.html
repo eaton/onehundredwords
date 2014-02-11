@@ -2,8 +2,8 @@
 layout: default
 title: one hundred words
 ---
-{% assign ep = 0 %}
-<ul class="season">{% for episode in site.categories.00 reversed %}
-  <li class="published {{ episode.layout }}"><a href="{{ episode.url }}">{% if ep < 10 %}{{ ep | prepend:"0" }}{% endif %}{{ ep }}</a></li>{% capture ep %}{{ ep | plus:1 }}{% endcapture %}{% endfor %}
-{% for ep in (ep..99) %}  <li class="unpublished">{% if ep < 10 %}{{ ep | prepend:"0" }}{% endif %}{{ ep }}</li>{% endfor %}
-</ul>
+
+<nav>
+<ul class="season">
+{% for ep in site.categories.00 reversed %}<li class="published {{ ep.layout }}"><a href="{{ ep.url }}">{% if forloop.index0 < 10 %}0{% endif %}{{ forloop.index0 }}</a></li>{% if forloop.last %}{% assign start = forloop.index %}{% endif %}{% endfor %}{% for ep in (start..99) %}<li class="unpublished"><span>{% if ep < 10 %}0{% endif %}{{ ep }}</span></li>{% endfor %}
+</nav>

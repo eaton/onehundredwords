@@ -1,13 +1,11 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-
-<article>
+<article{% if page.layout = "words" %} data-wordcount="{{ content | strip_html | trim | number_of_words }}{% endif %}">
 {{ content }}
 </article>
 
 <nav>
-{% if page.previous.url %}<a class="prev" href="{{ page.previous.url }}">{% endif %}{% include prev.svg %}{% if page.previous.url %}</a>{% endif %}
-{% if page.next.url %}<a class="prev" href="{{ page.next.url }}">{% endif %}{% include next.svg %}{% if page.next.url %}</a>{% endif %}
+{% if page.previous.url %}<a class="prev" href="{{ page.previous.url }}">{% include prev.svg %}</a>{% else %}<span class="prev">{% include prev.svg %}</span>{% endif %}
+{% if page.next.url %}<a class="next" href="{{ page.next.url }}">{% include next.svg %}</a>{% else %}<span class="next">{% include next.svg %}</span>{% endif %}
 </nav>
