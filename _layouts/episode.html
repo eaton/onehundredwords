@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<article{% if page.layout == "words" %} data-wordcount="{{ content | strip_html | trim | number_of_words }}{% endif %}">
+{% capture wordcount %}{{ content | strip_html | trim | number_of_words }}{% endcapture %}
+<article{% if wordcount != "0" %} data-wordcount="{{ wordcount }}"{% endif %}>
 {{ content }}
 </article>
 
